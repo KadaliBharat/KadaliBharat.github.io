@@ -459,7 +459,7 @@ a {
 }
 
 .project-card {
-    padding: 40px;
+    padding: 30px;
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
@@ -470,11 +470,62 @@ a {
     border-color: rgba(255, 255, 255, 0.15);
 }
 
+.project-img-link {
+    display: block;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--glass-border);
+    background: rgba(15, 23, 42, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-image-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+    display: block;
+}
+
+.project-img-link:hover .project-img {
+    transform: scale(1.04);
+}
+
+.project-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.project-img-link:hover .project-img-overlay {
+    opacity: 1;
+}
+
 .project-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
 }
 
 .project-icon {
